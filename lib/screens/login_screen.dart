@@ -6,6 +6,7 @@ import '../services/webauthn_service.dart';
 import '../services/api_service.dart';
 import 'home_screen.dart';
 import 'fingerprint_debug_screen.dart';
+import 'register_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -314,10 +315,9 @@ class _LoginScreenState extends State<LoginScreen> {
                     const Text('還沒有帳號？'),
                     TextButton(
                       onPressed: () {
-                        // TODO: 導航到註冊頁面
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          const SnackBar(
-                            content: Text('註冊功能開發中...'),
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) => const RegisterScreen(),
                           ),
                         );
                       },

@@ -19,6 +19,7 @@ class ApiService {
   Map<String, String> _getHeaders({bool includeAuth = false}) {
     final headers = {
       'Content-Type': 'application/json',
+      'ngrok-skip-browser-warning': 'true',
     };
 
     if (includeAuth && _accessToken != null) {
